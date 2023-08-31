@@ -7332,21 +7332,14 @@
 	        		vanillanote_onCreate(vn);
 	        		vn.elementEvents.textarea_onBeforeFocus = function(e) {
 	        			if(vn.elements.textareas[0] === e.target) {
-	        				vn.variables.activeModeByDevice = 'ADAPTIVE';
+	        				vn.variables.useAutoScroll = (typeof window.orientation !== "undefined") || (navigator.userAgent.indexOf("IEMobile") !== -1);
 	        			} else if(vn.elements.textareas[1] === e.target) {
-	        				vn.variables.activeModeByDevice = 'MOBILE';
+	        				vn.variables.useAutoScroll = true;
 	        				vn.variables.mobileKeyboardHeight = '200';
 	        			} else {
-	        				vn.variables.activeModeByDevice = 'DESKTOP';
+	        				vn.variables.useAutoScroll = false;
 	        			}
 	        			return true;
-	        		};
-	        		vn.elementEvents.textarea_onAfterBlur = function(e) {
-	        			if(vn.elements.textareas[1] === e.target) {
-	        				setTimeout(() => {
-	        					vn.variables.activeModeByDevice = 'ADAPTIVE';
-	        				}, 500);
-	        			}
 	        		};
 				},
 				beforeDestroy: function() {
