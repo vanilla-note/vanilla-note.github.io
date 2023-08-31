@@ -7332,22 +7332,23 @@
 	        		this.vanillanote = getVanillanote();
 	        		let vn = this.vanillanote;
 	        		vanillanote_onCreate(vn);
-	        		vn.elementEvents.textarea_onBeforeFocus = function(e) {
-	        			if(vn.elements.textareas[0] === e.target) {
-	        				vn.variables.useAutoScroll = (typeof window.orientation !== "undefined") || (navigator.userAgent.indexOf("IEMobile") !== -1);
-	        			} else if(vn.elements.textareas[1] === e.target) {
-	        				vn.variables.useAutoScroll = true;
-	        			} else {
-	        				vn.variables.useAutoScroll = false;
-	        			}
-	        			return true;
-	        		};
-	        		vn.elementEvents.textarea_onAfterFocus = function(e) {
-						if(vn.elements.textareas[1] === e.target) {
-							e.target.style.height = '200px';
-						}
-	        			vn.variables.useAutoScroll = (typeof window.orientation !== "undefined") || (navigator.userAgent.indexOf("IEMobile") !== -1);
-	        		};
+// 	        		vn.elementEvents.textarea_onBeforeFocus = function(e) {
+// 	        			if(vn.elements.textareas[0] === e.target) {
+// 	        				vn.variables.useAutoScroll = (typeof window.orientation !== "undefined") || (navigator.userAgent.indexOf("IEMobile") !== -1);
+// 	        			} else if(vn.elements.textareas[1] === e.target) {
+// 	        				vn.variables.useAutoScroll = true;
+// 	        			} else {
+// 	        				vn.variables.useAutoScroll = false;
+// 	        			}
+// 	        			return true;
+// 	        		};
+// 	        		vn.elementEvents.textarea_onAfterFocus = function(e) {
+// 	        			 if(vn.elements.textareas[1] === e.target) {
+// 	        				setTimeout(function() {
+// 	        					e.target.style.height = '200px';
+// 	        				}, 20);
+// 	        			 }
+// 	        		};
 				},
 				beforeDestroy: function() {
 					window.removeEventListener('scroll', this.handleScroll);
