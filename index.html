@@ -3,14 +3,15 @@
 <head>
 	<title>Vanillanote</title>
 	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+	<meta name="apple-mobile-web-app-capable"content="yes"/>
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1,maximum-scale=1,user-scalable=no"/>
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;600&family=Noto+Sans+KR:wght@100;600&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css"/>
-	<script src="/Vanillanote.min.1.0.0.js"></script>
+	<script src="../js/biz/sc/VanillaNote.1.0.0.js?ver=202308030940"></script>
 	<script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
 	<style>
 	/* Alphabet */
@@ -31,6 +32,11 @@
 	body {
 		font-family: 'Georgia', 'Noto Sans KR', 'Roboto', sans-serif;
 		font-size: 1.2em;
+		overflow-y: auto;
+		overflow-x: hidden;
+		-webkit-box-sizing: border-box;
+		-moz-box-sizing: border-box;
+		box-sizing: border-box;
 	}
 	@font-face {
 		font-family: 'Noto Sans KR';
@@ -146,7 +152,6 @@
  	    font-size:0.9em;
 		}
 	}
-	
 	</style>
 	<script>
 	const attributes = {
@@ -3017,11 +3022,11 @@
 };
 `,
 					"3190" : ".mobileKeyboardHeight",
-					"3191" : "1. 모바일이용 시 자판이 올라오는 크기를 대략 추정해서 넣은 값.",
+					"3191" : "1. 모바일이용 시 기존 textarea높이 - 자판이 올라오는 높이를 대략 추정해서 넣은 값.",
 					"3192" : "2. IOS는 모바일 자판의 크기를 가져올 수 없어서 만든 값 입니다.",
 					"3193" : "3. 혹여 Android, IOS등 모바일 사용 시 올라오는 자판의 크기를 가져올 수 있는 개발자분은"
-							+" 해당 값에 자판 크기를 대입해서 사용하시면 됩니다.",
-					"3194" : "4. textarea focus시 .mobileKeyboardHeight에 저장된 값만큼 textarea 높이가 줄어듭니다.",
+							+" 해당 값에 기존 textarea높이 - 자판 크기를 대입해서 사용하시면 됩니다.",
+					"3194" : "4. textarea focus시 .mobileKeyboardHeight에 저장된 값만큼 textarea 높이가 설정됩니다.",
 					"3195" : "height pixel",
 					"3196" : "Default값은 사용자 화면의 높이(innerHeight) * 0.4(최대 500). pixel값을 입력한다.",
 					"3197" : 
@@ -4783,7 +4788,7 @@
 	};
 	</script>
 </head>
-<body style="overflow-y: auto; overflow-x: hidden;">
+<body style="overflow-y: auto;overflow-x: hidden;-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">
 	<div id="app">
 		<app-header
 		@on-location="onLocation"
