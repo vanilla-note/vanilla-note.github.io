@@ -7337,11 +7337,16 @@
 	        				vn.variables.useAutoScroll = (typeof window.orientation !== "undefined") || (navigator.userAgent.indexOf("IEMobile") !== -1);
 	        			} else if(vn.elements.textareas[1] === e.target) {
 	        				vn.variables.useAutoScroll = true;
-	        				vn.variables.mobileKeyboardExceptHeight = '200';
 	        			} else {
 	        				vn.variables.useAutoScroll = false;
 	        			}
 	        			return true;
+	        		};
+	        		vn.elementEvents.textarea_onAfterFocus = function(e) {
+						if(vn.elements.textareas[1] === e.target) {
+							e.target.style.height = '200px';
+						}
+	        			vn.variables.useAutoScroll = (typeof window.orientation !== "undefined") || (navigator.userAgent.indexOf("IEMobile") !== -1);
 	        		};
 				},
 				beforeDestroy: function() {
