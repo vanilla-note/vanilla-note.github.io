@@ -131,13 +131,12 @@
 	}
 	.dot {
 		display: inline-block;
-		margin: 0 10px;
+		margin: 0 5px;
 	}
 	.note-box, .explain-box {
 		width: 70%;
 		padding-left: 30px;
 	}
-	/* 모니터 본체 */
 	.desktop-screen {
 		display: inline-block;
 		width: 300px;
@@ -147,7 +146,6 @@
 		box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
 		position: relative;
 	}
-	/* 모니터 스크린 (실제 내용이 들어갈 부분) */
 	.desktop-screen .screen {
 		width: 296px;
 		height: 196px;
@@ -158,7 +156,6 @@
 		border-radius: 8px;
 		overflow: hidden;
 	}
-	/* 모니터 스탠드 */
 	.desktop-screen .stand {
 		width: 80px;
 		height: 10px;
@@ -216,6 +213,10 @@
 	}
 	.bold-none {
 		font-weight: 300;
+	}
+	.h4 {
+		padding: 0 7px;
+		line-height: 1.5em;
 	}
 	.h5 {
 		font-size: 15px;
@@ -4933,7 +4934,7 @@
 						</a>
 					</div>
 					<br>
-					<p class="h4 padding-top" :id="introSubs[0]"><span class="dot">●</span><b>{{ getIntroMainComment(1100) }}</b></p>
+					<p class="h4 padding-top" :id="introSubs[0]"><span class="dot"><i class="fas fa-book-open"></i></span><b>{{ getIntroMainComment(1100) }}</b></p>
 					<br>
 					<div class="note-box"><div data-vanillanote v-bind="note01Attrs"></div></div>
 					<div class="explain-box">
@@ -4942,7 +4943,7 @@
 					</div>
 					<br><br>
 					<div>
-						<p class="h4 padding-top"><span class="dot">●</span><b>{{ getIntroMainComment(1200) }}</b></p>
+						<p class="h4 padding-top"><span class="dot"><i class="fas fa-book-open"></i></span><b>{{ getIntroMainComment(1200) }}</b></p>
 						<br>
 						<div class="note-box text-center">
 							<div class="mobile-screen text-left" v-show="!isMobile">
@@ -4967,7 +4968,7 @@
 						</div>
 						<br><br>
 					</div>
-					<p class="h4 padding-top"><span class="dot">●</span><b>{{ getIntroMainComment(1300) }}</b></p>
+					<p class="h4 padding-top"><span class="dot"><i class="fas fa-book-open"></i></span><b>{{ getIntroMainComment(1300) }}</b></p>
 					<div class="explain-box">
 						<p class="h5">{{ getIntroMainComment(1301) }}</p>
 						<table class="table">
@@ -4989,7 +4990,7 @@
 						<p class="h6">{{ getIntroMainComment(1305) }}</p>
 					</div>
 					<br><br>
-					<p class="h4 padding-top"><span class="dot">●</span><b>{{ getIntroMainComment(1350) }}</b></p>
+					<p class="h4 padding-top"><span class="dot"><i class="fas fa-book-open"></i></span><b>{{ getIntroMainComment(1350) }}</b></p>
 					<div class="explain-box">
 						<p class="h5">{{ getIntroMainComment(1351) }}</p>
 						<p class="h5">{{ getIntroMainComment(1352) }}</p>
@@ -5006,7 +5007,7 @@
 						<p class="h5">{{ getIntroMainComment(1363) }}</p>
 					</div>
 					<br><br>
-					<p class="h4 padding-top" :id="introSubs[1]"><span class="dot">●</span><b>{{ getIntroMainComment(1400) }}</b></p>
+					<p class="h4 padding-top" :id="introSubs[1]"><span class="dot"><i class="fas fa-book-open"></i></span><b>{{ getIntroMainComment(1400) }}</b></p>
 					<div class="explain-box">
 						<p class="h5">{{ getIntroMainComment(1401) }}</p>
 						<p class="h5">{{ getIntroMainComment(1410) }}</p>
@@ -5023,7 +5024,7 @@
 						</ul>
 					</div>
 					<br><br>
-					<p class="h4 padding-top" :id="introSubs[2]"><span class="dot">●</span><b>{{ getIntroMainComment(1450) }}</b></p>
+					<p class="h4 padding-top" :id="introSubs[2]"><span class="dot"><i class="fas fa-book-open"></i></span><b>{{ getIntroMainComment(1450) }}</b></p>
 					<div class="explain-box">
 						<table class="table">
 							<tbody>
@@ -5082,12 +5083,12 @@
 						</table>
 					</div>
 					<br><br>
-					<p class="h4 padding-top" :id="introSubs[3]"><span class="dot">●</span><b>{{ getIntroMainComment(1500) }}</b></p>
+					<p class="h4 padding-top" :id="introSubs[3]"><span class="dot"><i class="fas fa-book-open"></i></span><b>{{ getIntroMainComment(1500) }}</b></p>
 					<div class="explain-box">
 						<p class="h5">{{ getIntroMainComment(1501) }}</p>
 					</div>
 					<br><br>
-					<p class="h4 padding-top" :id="introSubs[4]"><span class="dot">●</span><b>{{ getIntroMainComment(1600) }}</b></p>
+					<p class="h4 padding-top" :id="introSubs[4]"><span class="dot"><i class="fas fa-book-open"></i></span><b>{{ getIntroMainComment(1600) }}</b></p>
 					<div class="explain-box">
 						<p class="h5">{{ getIntroMainComment(1601) }}</p>
 					</div>
@@ -5107,7 +5108,7 @@
 				</div>
 				<div class="text-left" :class="getMainClass">
 					<br>
-					<p class="h4 padding-top" :id="startedSubs[0]"><span class="dot">●</span><b>{{ getStartedMainComment(1000) }}</b></p>
+					<p class="h4 padding-top" :id="startedSubs[0]"><span class="dot"><i class="fas fa-book-open"></i></span><b>{{ getStartedMainComment(1000) }}</b></p>
 					<div class="explain-box">
 						<p class="h5">{{ getStartedMainComment(1001) }}</p>
 						<p class="h5">{{ getStartedMainComment(1002) }}</p>
@@ -5119,7 +5120,7 @@
 						<p class="h5">{{ getStartedMainComment(1005) }}</p>
 					</div>
 					<br>
-					<p class="h5"><span class="dot">■</span>{{ getStartedMainComment(1010) }}</p>
+					<p class="h5"><span class="dot"><i class="fas fa-pencil-alt"></i></span>{{ getStartedMainComment(1010) }}</p>
 					<div class="explain-box">
 						<p class="h5">{{ getStartedMainComment(1011) }}</p>
 						<table class="table">
@@ -5172,7 +5173,7 @@
 						<p class="h5">{{ getStartedMainComment(1022) }}</p>
 					</div>
 					<br>
-					<p class="h5"><span class="dot">■</span>{{ getStartedMainComment(1030) }}</p>
+					<p class="h5"><span class="dot"><i class="fas fa-pencil-alt"></i></span>{{ getStartedMainComment(1030) }}</p>
 					<div class="explain-box">
 						<p class="h5">{{ getStartedMainComment(1031) }}</p>
 						<table class="table">
@@ -5221,12 +5222,12 @@
 						<p class="h5">{{ getStartedMainComment(1039) }}</p>
 					</div>
 					<br><br>
-					<p class="h4 padding-top" :id="startedSubs[1]"><span class="dot">●</span><b>{{ getStartedMainComment(1100) }}</b></p>
+					<p class="h4 padding-top" :id="startedSubs[1]"><span class="dot"><i class="fas fa-book-open"></i></span><b>{{ getStartedMainComment(1100) }}</b></p>
 					<div class="explain-box">
 						<p class="h5">{{ getStartedMainComment(1101) }}</p>
 					</div>
 					<br>
-					<p class="h5"><span class="dot">■</span>{{ getStartedMainComment(1120) }}</p>
+					<p class="h5"><span class="dot"><i class="fas fa-pencil-alt"></i></span>{{ getStartedMainComment(1120) }}</p>
 					<div class="explain-box">
 						<p class="h5">{{ getStartedMainComment(1121) }}</p>
 						<p class="h5">{{ getStartedMainComment(1122) }}</p>
@@ -5283,7 +5284,7 @@
 						<pre><code>{{ getVanillanoteCode(noteSizeLevel) }}</code></pre>
 					</div>
 					<br>
-					<p class="h5"><span class="dot">■</span>{{ getStartedMainComment(1140) }}</p>
+					<p class="h5"><span class="dot"><i class="fas fa-pencil-alt"></i></span>{{ getStartedMainComment(1140) }}</p>
 					<div class="explain-box">
 						<p class="h5">{{ getStartedMainComment(1141) }}</p>
 						<p class="h5">{{ getStartedMainComment(1142) }}</p>
@@ -5323,7 +5324,7 @@
 						<pre><code>{{ getStartedMainComment(1149) }}</code></pre>
 					</div>
 					<br>
-					<p class="h5"><span class="dot">■</span>{{ getStartedMainComment(1160) }}</p>
+					<p class="h5"><span class="dot"><i class="fas fa-pencil-alt"></i></span>{{ getStartedMainComment(1160) }}</p>
 					<div class="explain-box">
 						<p class="h5">{{ getStartedMainComment(1161) }}</p>
 						<p class="h5">{{ getStartedMainComment(1162) }}</p>
@@ -5363,7 +5364,7 @@
 						<pre><code>{{ getStartedMainComment(1169) }}</code></pre>
 					</div>
 					<br>
-					<p class="h5"><span class="dot">■</span>{{ getStartedMainComment(1180) }}</p>
+					<p class="h5"><span class="dot"><i class="fas fa-pencil-alt"></i></span>{{ getStartedMainComment(1180) }}</p>
 					<div class="explain-box">
 						<p class="h5">{{ getStartedMainComment(1181) }}</p>
 						<p class="h5">{{ getStartedMainComment(1182) }}</p>
@@ -5391,13 +5392,13 @@
 						<pre><code>{{ getStartedMainComment(1188) }}</code></pre>
 					</div>
 					<br><br>
-					<p class="h4 padding-top" :id="startedSubs[2]"><span class="dot">●</span><b>{{ getStartedMainComment(1200) }}</b></p>
+					<p class="h4 padding-top" :id="startedSubs[2]"><span class="dot"><i class="fas fa-book-open"></i></span><b>{{ getStartedMainComment(1200) }}</b></p>
 					<div class="explain-box">
 						<p class="h5">{{ getStartedMainComment(1201) }}</p>
 						<p class="h5">{{ getStartedMainComment(1202) }}</p>
 					</div>
 					<br>
-					<p class="h5"><span class="dot">■</span>{{ getStartedMainComment(1210) }}</p>
+					<p class="h5"><span class="dot"><i class="fas fa-pencil-alt"></i></span>{{ getStartedMainComment(1210) }}</p>
 					<div class="explain-box">
 						<p class="h5">{{ getStartedMainComment(1211) }}</p>
 						<table class="table">
@@ -5420,7 +5421,7 @@
 						<pre><code>{{ getStartedMainComment(1214) }}</code></pre>
 					</div>
 					<br>
-					<p class="h5"><span class="dot">■</span>{{ getStartedMainComment(1220) }}</p>
+					<p class="h5"><span class="dot"><i class="fas fa-pencil-alt"></i></span>{{ getStartedMainComment(1220) }}</p>
 					<div class="explain-box">
 						<p class="h5">{{ getStartedMainComment(1221) }}</p>
 						<table class="table">
@@ -5443,7 +5444,7 @@
 						<pre><code>{{ getStartedMainComment(1224) }}</code></pre>
 					</div>
 					<br>
-					<p class="h5"><span class="dot">■</span>{{ getStartedMainComment(1240) }}</p>
+					<p class="h5"><span class="dot"><i class="fas fa-pencil-alt"></i></span>{{ getStartedMainComment(1240) }}</p>
 					<div class="explain-box">
 						<p class="h5">{{ getStartedMainComment(1241) }}</p>
 						<table class="table">
@@ -5466,7 +5467,7 @@
 						<pre><code>{{ getStartedMainComment(1245) }}</code></pre>
 					</div>
 					<br>
-					<p class="h5"><span class="dot">■</span>{{ getStartedMainComment(1260) }}</p>
+					<p class="h5"><span class="dot"><i class="fas fa-pencil-alt"></i></span>{{ getStartedMainComment(1260) }}</p>
 					<div class="explain-box">
 						<p class="h5">{{ getStartedMainComment(1261) }}</p>
 						<p class="h5">{{ getStartedMainComment(1263) }}</p>
@@ -5490,7 +5491,7 @@
 						<pre><code>{{ getStartedMainComment(1265) }}</code></pre>
 					</div>
 					<br>
-					<p class="h5"><span class="dot">■</span>{{ getStartedMainComment(1280) }}</p>
+					<p class="h5"><span class="dot"><i class="fas fa-pencil-alt"></i></span>{{ getStartedMainComment(1280) }}</p>
 					<div class="explain-box">
 						<p class="h5">{{ getStartedMainComment(1281) }}</p>
 						<p class="h5">{{ getStartedMainComment(1282) }}</p>
@@ -5514,7 +5515,7 @@
 						<pre><code>{{ getStartedMainComment(1285) }}</code></pre>
 					</div>
 					<br><br>
-					<p class="h4 padding-top" :id="startedSubs[3]"><span class="dot">●</span><b>{{ getStartedMainComment(1300) }}</b></p>
+					<p class="h4 padding-top" :id="startedSubs[3]"><span class="dot"><i class="fas fa-book-open"></i></span><b>{{ getStartedMainComment(1300) }}</b></p>
 					<div class="explain-box">
 						<p class="h5">{{ getStartedMainComment(1301) }}</p>
 						<p class="h5">{{ getStartedMainComment(1302) }}</p>
@@ -5523,7 +5524,7 @@
 						</a>
 					</div>
 					<br>
-					<p class="h5"><span class="dot">■</span>{{ getStartedMainComment(1310) }}</p>
+					<p class="h5"><span class="dot"><i class="fas fa-pencil-alt"></i></span>{{ getStartedMainComment(1310) }}</p>
 					<div class="explain-box">
 						<p class="h5">{{ getStartedMainComment(1311) }}</p>
 						<table class="table">
@@ -5553,7 +5554,7 @@
 						<pre><code>{{ getVanillanoteCode(noteMainColor) }}</code></pre>
 					</div>
 					<br>
-					<p class="h5"><span class="dot">■</span>{{ getStartedMainComment(1340) }}</p>
+					<p class="h5"><span class="dot"><i class="fas fa-pencil-alt"></i></span>{{ getStartedMainComment(1340) }}</p>
 					<div class="explain-box">
 						<p class="h5">{{ getStartedMainComment(1341) }}</p>
 						<table class="table">
@@ -5594,7 +5595,7 @@
 						<pre><code>{{ getVanillanoteCode(noteColorSet) }}</code></pre>
 					</div>
 					<br>
-					<p class="h5"><span class="dot">■</span>{{ getStartedMainComment(1370) }}</p>
+					<p class="h5"><span class="dot"><i class="fas fa-pencil-alt"></i></span>{{ getStartedMainComment(1370) }}</p>
 					<div class="explain-box">
 						<p class="h5">{{ getStartedMainComment(1371) }}</p>
 						<p class="h5">{{ getStartedMainComment(1372) }}</p>
@@ -5637,12 +5638,12 @@
 					</div>
 					<br>
 					<br><br>
-					<p class="h4 padding-top" :id="startedSubs[4]"><span class="dot">●</span><b>{{ getStartedMainComment(1400) }}</b></p>
+					<p class="h4 padding-top" :id="startedSubs[4]"><span class="dot"><i class="fas fa-book-open"></i></span><b>{{ getStartedMainComment(1400) }}</b></p>
 					<div class="explain-box">
 						<p class="h5">{{ getStartedMainComment(1401) }}</p>
 					</div>
 					<br>
-					<p class="h5"><span class="dot">■</span>{{ getStartedMainComment(1420) }}</p>
+					<p class="h5"><span class="dot"><i class="fas fa-pencil-alt"></i></span>{{ getStartedMainComment(1420) }}</p>
 					<div class="explain-box">
 						<p class="h5">{{ getStartedMainComment(1421) }}</p>
 						<p class="h5">{{ getStartedMainComment(1422) }}</p>
@@ -5671,7 +5672,7 @@
 						<p class="h6">{{ getStartedMainComment(1428) }}</p>
 					</div>
 					<br>
-					<p class="h5"><span class="dot">■</span>{{ getStartedMainComment(1440) }}</p>
+					<p class="h5"><span class="dot"><i class="fas fa-pencil-alt"></i></span>{{ getStartedMainComment(1440) }}</p>
 					<div class="explain-box">
 						<p class="h5">{{ getStartedMainComment(1441) }}</p>
 						<p class="h5">{{ getStartedMainComment(1442) }}</p>
@@ -5700,7 +5701,7 @@
 						<pre><code>{{ getStartedMainComment(1448) }}</code></pre>
 					</div>
 					<br>
-					<p class="h5"><span class="dot">■</span>{{ getStartedMainComment(1460) }}</p>
+					<p class="h5"><span class="dot"><i class="fas fa-pencil-alt"></i></span>{{ getStartedMainComment(1460) }}</p>
 					<div class="explain-box">
 						<p class="h5">{{ getStartedMainComment(1461) }}</p>
 						<table class="table">
@@ -5723,7 +5724,7 @@
 						<pre><code>{{ getStartedMainComment(1464) }}</code></pre>
 					</div>
 					<br>
-					<p class="h5"><span class="dot">■</span>{{ getStartedMainComment(1480) }}</p>
+					<p class="h5"><span class="dot"><i class="fas fa-pencil-alt"></i></span>{{ getStartedMainComment(1480) }}</p>
 					<div class="explain-box">
 						<p class="h5">{{ getStartedMainComment(1481) }}</p>
 						<p class="h5">{{ getStartedMainComment(1482) }}</p>
@@ -5748,7 +5749,7 @@
 					</div>
 					<br>
 					<br><br>
-					<p class="h4 padding-top" :id="startedSubs[5]"><span class="dot">●</span><b>{{ getStartedMainComment(1500) }}</b></p>
+					<p class="h4 padding-top" :id="startedSubs[5]"><span class="dot"><i class="fas fa-book-open"></i></span><b>{{ getStartedMainComment(1500) }}</b></p>
 					<div class="explain-box">
 						<p class="h5">{{ getStartedMainComment(1501) }}</p>
 						<p class="h5">{{ getStartedMainComment(1502) }}</p>
@@ -5757,7 +5758,7 @@
 						</a>
 					</div>
 					<br>
-					<p class="h5"><span class="dot">■</span>{{ getStartedMainComment(1520) }}</p>
+					<p class="h5"><span class="dot"><i class="fas fa-pencil-alt"></i></span>{{ getStartedMainComment(1520) }}</p>
 					<div class="explain-box">
 						<p class="h5">{{ getStartedMainComment(1521) }}</p>
 						<p class="h5">{{ getStartedMainComment(1522) }}</p>
@@ -5789,7 +5790,7 @@
 						<pre><code>{{ getStartedMainComment(1528) }}</code></pre>
 					</div>
 					<br>
-					<p class="h5"><span class="dot">■</span>{{ getStartedMainComment(1540) }}</p>
+					<p class="h5"><span class="dot"><i class="fas fa-pencil-alt"></i></span>{{ getStartedMainComment(1540) }}</p>
 					<div class="explain-box">
 						<p class="h5">{{ getStartedMainComment(1541) }}</p>
 						<p class="h5">{{ getStartedMainComment(1542) }}</p>
@@ -5813,7 +5814,7 @@
 						<pre><code>{{ getStartedMainComment(1545) }}</code></pre>
 					</div>
 					<br>
-					<p class="h5"><span class="dot">■</span>{{ getStartedMainComment(1560) }}</p>
+					<p class="h5"><span class="dot"><i class="fas fa-pencil-alt"></i></span>{{ getStartedMainComment(1560) }}</p>
 					<div class="explain-box">
 						<p class="h5">{{ getStartedMainComment(1561) }}</p>
 						<p class="h5">{{ getStartedMainComment(1562) }}</p>
@@ -5837,7 +5838,7 @@
 						<pre><code>{{ getStartedMainComment(1565) }}</code></pre>
 					</div>
 					<br>
-					<p class="h5"><span class="dot">■</span>{{ getStartedMainComment(1580) }}</p>
+					<p class="h5"><span class="dot"><i class="fas fa-pencil-alt"></i></span>{{ getStartedMainComment(1580) }}</p>
 					<div class="explain-box">
 						<p class="h5">{{ getStartedMainComment(1581) }}</p>
 						<p class="h5">{{ getStartedMainComment(1582) }}</p>
@@ -5861,7 +5862,7 @@
 						<pre><code>{{ getStartedMainComment(1585) }}</code></pre>
 					</div>
 					<br>
-					<p class="h5"><span class="dot">■</span>{{ getStartedMainComment(1600) }}</p>
+					<p class="h5"><span class="dot"><i class="fas fa-pencil-alt"></i></span>{{ getStartedMainComment(1600) }}</p>
 					<div class="explain-box">
 						<p class="h5">{{ getStartedMainComment(1601) }}</p>
 						<p class="h5">{{ getStartedMainComment(1602) }}</p>
@@ -5885,7 +5886,7 @@
 						<pre><code>{{ getStartedMainComment(1605) }}</code></pre>
 					</div>
 					<br>
-					<p class="h5"><span class="dot">■</span>{{ getStartedMainComment(1620) }}</p>
+					<p class="h5"><span class="dot"><i class="fas fa-pencil-alt"></i></span>{{ getStartedMainComment(1620) }}</p>
 					<div class="explain-box">
 						<p class="h5">{{ getStartedMainComment(1621) }}</p>
 						<p class="h5">{{ getStartedMainComment(1622) }}</p>
@@ -5909,7 +5910,7 @@
 						<pre><code>{{ getStartedMainComment(1625) }}</code></pre>
 					</div>
 					<br>
-					<p class="h5"><span class="dot">■</span>{{ getStartedMainComment(1640) }}</p>
+					<p class="h5"><span class="dot"><i class="fas fa-pencil-alt"></i></span>{{ getStartedMainComment(1640) }}</p>
 					<div class="explain-box">
 						<p class="h5">{{ getStartedMainComment(1641) }}</p>
 						<p class="h5">{{ getStartedMainComment(1642) }}</p>
@@ -5933,7 +5934,7 @@
 						<pre><code>{{ getStartedMainComment(1645) }}</code></pre>
 					</div>
 					<br>
-					<p class="h5"><span class="dot">■</span>{{ getStartedMainComment(1660) }}</p>
+					<p class="h5"><span class="dot"><i class="fas fa-pencil-alt"></i></span>{{ getStartedMainComment(1660) }}</p>
 					<div class="explain-box">
 						<p class="h5">{{ getStartedMainComment(1661) }}</p>
 						<p class="h5">{{ getStartedMainComment(1662) }}</p>
@@ -5980,7 +5981,7 @@
 					</div>
 					<br>
 					<br><br>
-					<p class="h4 padding-top" :id="startedSubs[6]"><span class="dot">●</span><b>{{ getStartedMainComment(1700) }}</b></p>
+					<p class="h4 padding-top" :id="startedSubs[6]"><span class="dot"><i class="fas fa-book-open"></i></span><b>{{ getStartedMainComment(1700) }}</b></p>
 					<div class="explain-box">
 						<p class="h5">{{ getStartedMainComment(1701) }}</p>
 						<p class="h5">{{ getStartedMainComment(1702) }}</p>
@@ -5989,7 +5990,7 @@
 						</a>
 					</div>
 					<br>
-					<p class="h5"><span class="dot">■</span>{{ getStartedMainComment(1720) }}</p>
+					<p class="h5"><span class="dot"><i class="fas fa-pencil-alt"></i></span>{{ getStartedMainComment(1720) }}</p>
 					<div class="explain-box">
 						<p class="h5">{{ getStartedMainComment(1721) }}</p>
 						<p class="h5">{{ getStartedMainComment(1722) }}</p>
@@ -6013,7 +6014,7 @@
 						<pre><code>{{ getStartedMainComment(1725) }}</code></pre>
 					</div>
 					<br>
-					<p class="h5"><span class="dot">■</span>{{ getStartedMainComment(1740) }}</p>
+					<p class="h5"><span class="dot"><i class="fas fa-pencil-alt"></i></span>{{ getStartedMainComment(1740) }}</p>
 					<div class="explain-box">
 						<p class="h5">{{ getStartedMainComment(1741) }}</p>
 						<p class="h5">{{ getStartedMainComment(1742) }}</p>
@@ -6037,7 +6038,7 @@
 						<pre><code>{{ getStartedMainComment(1744) }}</code></pre>
 					</div>
 					<br>
-					<p class="h5"><span class="dot">■</span>{{ getStartedMainComment(1760) }}</p>
+					<p class="h5"><span class="dot"><i class="fas fa-pencil-alt"></i></span>{{ getStartedMainComment(1760) }}</p>
 					<div class="explain-box">
 						<p class="h5">{{ getStartedMainComment(1761) }}</p>
 						<table class="table">
@@ -6060,7 +6061,7 @@
 						<pre><code>{{ getStartedMainComment(1764) }}</code></pre>
 					</div>
 					<br>
-					<p class="h5"><span class="dot">■</span>{{ getStartedMainComment(1780) }}</p>
+					<p class="h5"><span class="dot"><i class="fas fa-pencil-alt"></i></span>{{ getStartedMainComment(1780) }}</p>
 					<div class="explain-box">
 						<p class="h5">{{ getStartedMainComment(1781) }}</p>
 						<p class="h5">{{ getStartedMainComment(1782) }}</p>
@@ -6084,7 +6085,7 @@
 						<pre><code>{{ getStartedMainComment(1784) }}</code></pre>
 					</div>
 					<br>
-					<p class="h5"><span class="dot">■</span>{{ getStartedMainComment(1800) }}</p>
+					<p class="h5"><span class="dot"><i class="fas fa-pencil-alt"></i></span>{{ getStartedMainComment(1800) }}</p>
 					<div class="explain-box">
 						<p class="h5">{{ getStartedMainComment(1801) }}</p>
 						<p class="h5">{{ getStartedMainComment(1802) }}</p>
@@ -6111,7 +6112,7 @@
 						<pre><code>{{ getStartedMainComment(1807) }}</code></pre>
 					</div>
 					<br>
-					<p class="h5"><span class="dot">■</span>{{ getStartedMainComment(1820) }}</p>
+					<p class="h5"><span class="dot"><i class="fas fa-pencil-alt"></i></span>{{ getStartedMainComment(1820) }}</p>
 					<div class="explain-box">
 						<p class="h5">{{ getStartedMainComment(1821) }}</p>
 						<table class="table">
@@ -6134,7 +6135,7 @@
 						<pre><code>{{ getStartedMainComment(1822) }}</code></pre>
 					</div>
 					<br><br>
-					<p class="h4 padding-top" :id="startedSubs[7]"><span class="dot">●</span><b>{{ getStartedMainComment(1900) }}</b></p>
+					<p class="h4 padding-top" :id="startedSubs[7]"><span class="dot"><i class="fas fa-book-open"></i></span><b>{{ getStartedMainComment(1900) }}</b></p>
 					<div class="explain-box">
 						<p class="h5">{{ getStartedMainComment(1901) }}</p>
 						<p class="h5">{{ getStartedMainComment(1902) }}</p>
@@ -6170,7 +6171,7 @@
 						<br>
 						<p class="h5">{{ getStartedMainComment(1948) }}</p>
 					</div>
-					<p class="h5"><span class="dot">■</span>{{ getStartedMainComment(1960) }}</p>
+					<p class="h5"><span class="dot"><i class="fas fa-pencil-alt"></i></span>{{ getStartedMainComment(1960) }}</p>
 					<div class="explain-box">
 						<p class="h5">{{ getStartedMainComment(1961) }}</p>
 						<table class="table">
@@ -6197,7 +6198,7 @@
 						<pre><code>{{ getStartedMainComment(1966) }}</code></pre>
 					</div>
 					<br>
-					<p class="h5"><span class="dot">■</span>{{ getStartedMainComment(1980) }}</p>
+					<p class="h5"><span class="dot"><i class="fas fa-pencil-alt"></i></span>{{ getStartedMainComment(1980) }}</p>
 					<div class="explain-box">
 						<p class="h5">{{ getStartedMainComment(1981) }}</p>
 						<table class="table">
@@ -6224,7 +6225,7 @@
 						<pre><code>{{ getStartedMainComment(1986) }}</code></pre>
 					</div>
 					<br>
-					<p class="h5"><span class="dot">■</span>{{ getStartedMainComment(2000) }}</p>
+					<p class="h5"><span class="dot"><i class="fas fa-pencil-alt"></i></span>{{ getStartedMainComment(2000) }}</p>
 					<div class="explain-box">
 						<p class="h5">{{ getStartedMainComment(2001) }}</p>
 						<table class="table">
@@ -6251,7 +6252,7 @@
 						<pre><code>{{ getStartedMainComment(2006) }}</code></pre>
 					</div>
 					<br>
-					<p class="h5"><span class="dot">■</span>{{ getStartedMainComment(2020) }}</p>
+					<p class="h5"><span class="dot"><i class="fas fa-pencil-alt"></i></span>{{ getStartedMainComment(2020) }}</p>
 					<div class="explain-box">
 						<p class="h5">{{ getStartedMainComment(2021) }}</p>
 						<table class="table">
@@ -6278,7 +6279,7 @@
 						<pre><code>{{ getStartedMainComment(2026) }}</code></pre>
 					</div>
 					<br>
-					<p class="h5"><span class="dot">■</span>{{ getStartedMainComment(2040) }}</p>
+					<p class="h5"><span class="dot"><i class="fas fa-pencil-alt"></i></span>{{ getStartedMainComment(2040) }}</p>
 					<div class="explain-box">
 						<p class="h5">{{ getStartedMainComment(2041) }}</p>
 						<table class="table">
@@ -6334,9 +6335,9 @@
 						<pre><code>{{ getVanillanoteCode(noteUsing) }}</code></pre>
 					</div>
 					<br><br>
-					<p class="h4 padding-top" :id="startedSubs[8]"><span class="dot">●</span><b>{{ getStartedMainComment(2100) }}</b></p>
+					<p class="h4 padding-top" :id="startedSubs[8]"><span class="dot"><i class="fas fa-book-open"></i></span><b>{{ getStartedMainComment(2100) }}</b></p>
 					<br>
-					<p class="h5"><span class="dot">■</span>{{ getStartedMainComment(2121) }}</p>
+					<p class="h5"><span class="dot"><i class="fas fa-pencil-alt"></i></span>{{ getStartedMainComment(2121) }}</p>
 					<div class="explain-box">
 						<p class="h5">{{ getStartedMainComment(2122) }}</p>
 						<p class="h5 text-danger">{{ getStartedMainComment(2123) }}</p>
@@ -6361,7 +6362,7 @@
 					</div>
 					<br>
 					<br><br>
-					<p class="h4 padding-top" :id="startedSubs[9]"><span class="dot">●</span><b>{{ getStartedMainComment(2300) }}</b></p>
+					<p class="h4 padding-top" :id="startedSubs[9]"><span class="dot"><i class="fas fa-book-open"></i></span><b>{{ getStartedMainComment(2300) }}</b></p>
 					<div class="explain-box">
 						<p class="h5">{{ getStartedMainComment(2301) }}</p>
 						<p class="h5">{{ getStartedMainComment(2302) }}</p>
@@ -6374,21 +6375,21 @@
 						<p class="h5">{{ getStartedMainComment(2309) }}</p>
 					</div>
 					<br>
-					<p class="h5"><span class="dot">■</span>{{ getStartedMainComment(2320) }}</p>
+					<p class="h5"><span class="dot"><i class="fas fa-pencil-alt"></i></span>{{ getStartedMainComment(2320) }}</p>
 					<div class="explain-box">
 						<pre><code>{{ getStartedMainComment(2321) }}</code></pre>
 						<p class="h5">{{ getStartedMainComment(2322) }}</p>
 						<p class="h5 text-info">{{ getStartedMainComment(2323) }}</p>
 					</div>
 					<br>
-					<p class="h5"><span class="dot">■</span>{{ getStartedMainComment(2340) }}</p>
+					<p class="h5"><span class="dot"><i class="fas fa-pencil-alt"></i></span>{{ getStartedMainComment(2340) }}</p>
 					<div class="explain-box">
 						<pre><code>{{ getStartedMainComment(2341) }}</code></pre>
 						<p class="h5">{{ getStartedMainComment(2342) }}</p>
 						<p class="h5">{{ getStartedMainComment(2343) }}</p>
 					</div>
 					<br>
-					<p class="h5"><span class="dot">■</span>{{ getStartedMainComment(2360) }}</p>
+					<p class="h5"><span class="dot"><i class="fas fa-pencil-alt"></i></span>{{ getStartedMainComment(2360) }}</p>
 					<div class="explain-box">
 						<pre><code>{{ getStartedMainComment(2361) }}</code></pre>
 						<p class="h5">{{ getStartedMainComment(2362) }}</p>
@@ -6409,7 +6410,7 @@
 				</div>
 				<div class="text-left" :class="getMainClass">
 					<br>
-					<p class="h4 padding-top"><span class="dot">●</span><b>{{ getDiveMainComment(1000) }}</b></p>
+					<p class="h4 padding-top"><span class="dot"><i class="fas fa-book-open"></i></span><b>{{ getDiveMainComment(1000) }}</b></p>
 					<br>
 					<div class="note-box">
 						<div data-vanillanote v-bind="noteCustom"></div>
@@ -6422,14 +6423,14 @@
 						<p class="h5">{{ getDiveMainComment(1001) }}</p>
 					</div>
 					<br><br>
-					<p class="h4 padding-top" :id="diveSubs[0]"><span class="dot">●</span><b>{{ getDiveMainComment(1100) }}</b></p>
+					<p class="h4 padding-top" :id="diveSubs[0]"><span class="dot"><i class="fas fa-book-open"></i></span><b>{{ getDiveMainComment(1100) }}</b></p>
 					<div class="explain-box">
 						<p class="h5">{{ getDiveMainComment(1101) }}</p>
 						<p class="h5">{{ getDiveMainComment(1102) }}</p>
 						<p class="h5">{{ getDiveMainComment(1103) }}</p>
 					</div>
 					<br>
-					<p class="h5"><span class="dot">■</span>{{ getDiveMainComment(1120) }}</p>
+					<p class="h5"><span class="dot"><i class="fas fa-pencil-alt"></i></span>{{ getDiveMainComment(1120) }}</p>
 					<div class="explain-box">
 						<p class="h5">{{ getDiveMainComment(1121) }}</p>
 						<a type="button" class="btn btn-default btn-md" :href="getHref('started','submit')">
@@ -6440,13 +6441,13 @@
 						<pre><code>{{ getDiveMainComment(1125) }}</code></pre>
 					</div>
 					<br>
-					<p class="h5"><span class="dot">■</span>{{ getDiveMainComment(1140) }}</p>
+					<p class="h5"><span class="dot"><i class="fas fa-pencil-alt"></i></span>{{ getDiveMainComment(1140) }}</p>
 					<div class="explain-box">
 						<p class="h5">{{ getDiveMainComment(1141) }}</p>
 						<pre><code>{{ getDiveMainComment(1142) }}</code></pre>
 					</div>
 					<br>
-					<p class="h5"><span class="dot">■</span>{{ getDiveMainComment(1150) }}</p>
+					<p class="h5"><span class="dot"><i class="fas fa-pencil-alt"></i></span>{{ getDiveMainComment(1150) }}</p>
 					<div class="explain-box">
 						<p class="h5">{{ getDiveMainComment(1151) }}</p>
 						<p class="h5">{{ getDiveMainComment(1152) }}</p>
@@ -6458,12 +6459,12 @@
 						<p class="h5">{{ getDiveMainComment(1158) }}</p>
 					</div>
 					<br>
-					<p class="h5"><span class="dot">■</span>{{ getDiveMainComment(1160) }}</p>
+					<p class="h5"><span class="dot"><i class="fas fa-pencil-alt"></i></span>{{ getDiveMainComment(1160) }}</p>
 					<div class="explain-box">
 						<p class="h5">{{ getDiveMainComment(1161) }}</p>
 					</div>
 					<br>
-					<p class="h5"><span class="dot">■</span>{{ getDiveMainComment(1170) }}</p>
+					<p class="h5"><span class="dot"><i class="fas fa-pencil-alt"></i></span>{{ getDiveMainComment(1170) }}</p>
 					<div class="explain-box">
 						<p class="h5">{{ getDiveMainComment(1171) }}</p>
 						<p class="h5">{{ getDiveMainComment(1172) }}</p>
@@ -6472,7 +6473,7 @@
 						<p class="h5">{{ getDiveMainComment(1175) }}</p>
 					</div>
 					<br>
-					<p class="h5"><span class="dot">■</span>{{ getDiveMainComment(1180) }}</p>
+					<p class="h5"><span class="dot"><i class="fas fa-pencil-alt"></i></span>{{ getDiveMainComment(1180) }}</p>
 					<div class="explain-box">
 						<p class="h5">{{ getDiveMainComment(1181) }}</p>
 						<p class="h5">{{ getDiveMainComment(1182) }}</p>
@@ -6486,19 +6487,19 @@
 						<p class="h5 text-info">{{ getDiveMainComment(1192) }}</p>
 					</div>
 					<br><br>
-					<p class="h4 padding-top" :id="diveSubs[1]"><span class="dot">●</span><b>{{ getDiveMainComment(1200) }}</b></p>
+					<p class="h4 padding-top" :id="diveSubs[1]"><span class="dot"><i class="fas fa-book-open"></i></span><b>{{ getDiveMainComment(1200) }}</b></p>
 					<div class="explain-box">
 						<p class="h5">{{ getDiveMainComment(1201) }}</p>
 					</div>
 					<br>
-					<p class="h5"><span class="dot">■</span>{{ getDiveMainComment(1210) }}</p>
+					<p class="h5"><span class="dot"><i class="fas fa-pencil-alt"></i></span>{{ getDiveMainComment(1210) }}</p>
 					<div class="explain-box">
 						<p class="h5">{{ getDiveMainComment(1211) }}</p>
 						<p class="h5">{{ getDiveMainComment(1212) }}</p>
 						<pre><code>{{ getDiveMainComment(1213) }}</code></pre>
 					</div>
 					<br>
-					<p class="h5"><span class="dot">■</span>{{ getDiveMainComment(1220) }}</p>
+					<p class="h5"><span class="dot"><i class="fas fa-pencil-alt"></i></span>{{ getDiveMainComment(1220) }}</p>
 					<div class="explain-box">
 						<p class="h5">{{ getDiveMainComment(1221) }}</p>
 						<p class="h5">{{ getDiveMainComment(1222) }}</p>
@@ -6513,7 +6514,7 @@
 						</p>
 					</div>
 					<br><br>
-					<p class="h4 padding-top" :id="diveSubs[2]"><span class="dot">●</span><b>{{ getDiveMainComment(1300) }}</b></p>
+					<p class="h4 padding-top" :id="diveSubs[2]"><span class="dot"><i class="fas fa-book-open"></i></span><b>{{ getDiveMainComment(1300) }}</b></p>
 					<div class="explain-box">
 						<p class="h5">{{ getDiveMainComment(1301) }}<span class="text-danger">&nbsp;{{ getCommonComment(1004) }}</span></p>
 						<p class="h5">{{ getDiveMainComment(1302) }}</p>
@@ -6540,7 +6541,7 @@
 						</p>
 					</div>
 					<br><br>
-					<p class="h4 padding-top" :id="diveSubs[3]"><span class="dot">●</span><b>{{ getDiveMainComment(1500) }}</b></p>
+					<p class="h4 padding-top" :id="diveSubs[3]"><span class="dot"><i class="fas fa-book-open"></i></span><b>{{ getDiveMainComment(1500) }}</b></p>
 					<div class="explain-box">
 						<p class="h5">{{ getDiveMainComment(1501) }}</p>
 						<p class="h5">{{ getDiveMainComment(1502) }}</p>
@@ -6577,7 +6578,7 @@
 						</p>
 					</div>
 					<br><br>
-					<p class="h4 padding-top" :id="diveSubs[4]"><span class="dot">●</span><b>{{ getDiveMainComment(1700) }}</b></p>
+					<p class="h4 padding-top" :id="diveSubs[4]"><span class="dot"><i class="fas fa-book-open"></i></span><b>{{ getDiveMainComment(1700) }}</b></p>
 					<div class="explain-box">
 						<p class="h5">{{ getDiveMainComment(1701) }}</p>
 						<p class="h5">{{ getDiveMainComment(1702) }}</p>
@@ -6609,7 +6610,7 @@
 						</p>
 					</div>
 					<br><br>
-					<p class="h4 padding-top" :id="diveSubs[5]"><span class="dot">●</span><b>{{ getDiveMainComment(1900) }}</b></p>
+					<p class="h4 padding-top" :id="diveSubs[5]"><span class="dot"><i class="fas fa-book-open"></i></span><b>{{ getDiveMainComment(1900) }}</b></p>
 					<div class="explain-box">
 						<p class="h5">{{ getDiveMainComment(1901) }}</p>
 						<p class="h5">{{ getDiveMainComment(1902) }}</p>
@@ -6643,7 +6644,7 @@
 						</p>
 					</div>
 					<br><br>
-					<p class="h4 padding-top" :id="diveSubs[6]"><span class="dot">●</span><b>{{ getDiveMainComment(2100) }}</b></p>
+					<p class="h4 padding-top" :id="diveSubs[6]"><span class="dot"><i class="fas fa-book-open"></i></span><b>{{ getDiveMainComment(2100) }}</b></p>
 					<div class="explain-box">
 						<p class="h5">{{ getDiveMainComment(2101) }}</p>
 						<p class="h5">{{ getDiveMainComment(2102) }}</p>
@@ -6675,7 +6676,7 @@
 						</p>
 					</div>
 					<br><br>
-					<p class="h4 padding-top" :id="diveSubs[7]"><span class="dot">●</span><b>{{ getDiveMainComment(2300) }}</b></p>
+					<p class="h4 padding-top" :id="diveSubs[7]"><span class="dot"><i class="fas fa-book-open"></i></span><b>{{ getDiveMainComment(2300) }}</b></p>
 					<div class="explain-box">
 						<p class="h5">{{ getDiveMainComment(2301) }}</p>
 						<p class="h5">{{ getDiveMainComment(2302) }}</p>
@@ -6709,7 +6710,7 @@
 						</p>
 					</div>
 					<br><br>
-					<p class="h4 padding-top" :id="diveSubs[8]"><span class="dot">●</span><b>{{ getDiveMainComment(3000) }}</b></p>
+					<p class="h4 padding-top" :id="diveSubs[8]"><span class="dot"><i class="fas fa-book-open"></i></span><b>{{ getDiveMainComment(3000) }}</b></p>
 					<div class="explain-box">
 						<p class="h5">{{ getDiveMainComment(3001) }}</p>
 						<p class="h5">{{ getDiveMainComment(3002) }}</p>
@@ -6739,7 +6740,7 @@
 						</p>
 					</div>
 					<br><br>
-					<p class="h4 padding-top" :id="diveSubs[9]"><span class="dot">●</span><b>{{ getDiveMainComment(3100) }}</b></p>
+					<p class="h4 padding-top" :id="diveSubs[9]"><span class="dot"><i class="fas fa-book-open"></i></span><b>{{ getDiveMainComment(3100) }}</b></p>
 					<div class="explain-box">
 						<p class="h5">{{ getDiveMainComment(3101) }}</p>
 						<p class="h5">{{ getDiveMainComment(3102) }}</p>
@@ -6757,7 +6758,7 @@
 						</p>
 					</div>
 					<br>
-					<p class="h5"><span class="dot">■</span>{{ getDiveMainComment(3110) }}</p>
+					<p class="h5"><span class="dot"><i class="fas fa-pencil-alt"></i></span>{{ getDiveMainComment(3110) }}</p>
 					<div class="explain-box">
 						<p class="h5">{{ getDiveMainComment(3111) }}</p>
 						<p class="h5">{{ getDiveMainComment(3112) }}</p>
@@ -6780,7 +6781,7 @@
 						<pre><code>{{ getDiveMainComment(3116) }}</code></pre>
 					</div>
 					<br>
-					<p class="h5"><span class="dot">■</span>{{ getDiveMainComment(3130) }}</p>
+					<p class="h5"><span class="dot"><i class="fas fa-pencil-alt"></i></span>{{ getDiveMainComment(3130) }}</p>
 					<div class="explain-box">
 						<p class="h5">{{ getDiveMainComment(3131) }}</p>
 						<p class="h5">{{ getDiveMainComment(3132) }}</p>
@@ -6810,7 +6811,7 @@
 						<pre><code>{{ getDiveMainComment(3139) }}</code></pre>
 					</div>
 					<br>
-					<p class="h5" id="etc_anchor_01"><span class="dot">■</span>{{ getDiveMainComment(3170) }}</p>
+					<p class="h5" id="etc_anchor_01"><span class="dot"><i class="fas fa-pencil-alt"></i></span>{{ getDiveMainComment(3170) }}</p>
 					<div class="explain-box">
 						<p class="h5">{{ getDiveMainComment(3171) }}</p>
 						<p class="h5">{{ getDiveMainComment(3172) }}</p>
@@ -6836,7 +6837,7 @@
 						<pre><code>{{ getDiveMainComment(3177) }}</code></pre>
 					</div>
 					<br>
-					<p class="h5" id="etc_anchor_02"><span class="dot">■</span>{{ getDiveMainComment(3210) }}</p>
+					<p class="h5" id="etc_anchor_02"><span class="dot"><i class="fas fa-pencil-alt"></i></span>{{ getDiveMainComment(3210) }}</p>
 					<div class="explain-box">
 						<p class="h5">{{ getDiveMainComment(3211) }}</p>
 						<p class="h5">{{ getDiveMainComment(3212) }}</p>
@@ -6859,7 +6860,7 @@
 						<pre><code>{{ getDiveMainComment(3216) }}</code></pre>
 					</div>
 					<br>
-					<p class="h5"><span class="dot">■</span>{{ getDiveMainComment(3230) }}</p>
+					<p class="h5"><span class="dot"><i class="fas fa-pencil-alt"></i></span>{{ getDiveMainComment(3230) }}</p>
 					<div class="explain-box">
 						<p class="h5">{{ getDiveMainComment(3231) }}</p>
 						<table class="table">
@@ -6880,7 +6881,7 @@
 						<pre><code>{{ getDiveMainComment(3234) }}</code></pre>
 					</div>
 					<br>
-					<p class="h5"><span class="dot">■</span>{{ getDiveMainComment(3250) }}</p>
+					<p class="h5"><span class="dot"><i class="fas fa-pencil-alt"></i></span>{{ getDiveMainComment(3250) }}</p>
 					<div class="explain-box">
 						<p class="h5">{{ getDiveMainComment(3251) }}</p>
 						<table class="table">
@@ -6911,7 +6912,7 @@
 						<pre><code>{{ getDiveMainComment(3259) }}</code></pre>
 					</div>
 					<br>
-					<p class="h5" id="etc_anchor_03"><span class="dot">■</span>{{ getDiveMainComment(3280) }}</p>
+					<p class="h5" id="etc_anchor_03"><span class="dot"><i class="fas fa-pencil-alt"></i></span>{{ getDiveMainComment(3280) }}</p>
 					<div class="explain-box">
 						<p class="h5">{{ getDiveMainComment(3281) }}</p>
 						<p class="h5">{{ getDiveMainComment(3282) }}</p>
@@ -6955,7 +6956,7 @@
 						<pre><code>{{ getDiveMainComment(3296) }}</code></pre>
 					</div>
 					<br>
-					<p class="h5"><span class="dot">■</span>{{ getDiveMainComment(3320) }}</p>
+					<p class="h5"><span class="dot"><i class="fas fa-pencil-alt"></i></span>{{ getDiveMainComment(3320) }}</p>
 					<div class="explain-box">
 						<p class="h5">{{ getDiveMainComment(3321) }}</p>
 						<p class="h5">{{ getDiveMainComment(3322) }}</p>
@@ -6985,7 +6986,7 @@
 						<pre><code>{{ getDiveMainComment(3329) }}</code></pre>
 					</div>
 					<br>
-					<p class="h5" id="etc_anchor_04"><span class="dot">■</span>{{ getDiveMainComment(3340) }}</p>
+					<p class="h5" id="etc_anchor_04"><span class="dot"><i class="fas fa-pencil-alt"></i></span>{{ getDiveMainComment(3340) }}</p>
 					<div class="explain-box">
 						<p class="h5">{{ getDiveMainComment(3341) }}</p>
 						<p class="h5">{{ getDiveMainComment(3342) }}</p>
@@ -7025,7 +7026,7 @@
 						<pre><code>{{ getDiveMainComment(3354) }}</code></pre>
 					</div>
 					<br>
-					<p class="h5"><span class="dot">■</span>{{ getDiveMainComment(3380) }}</p>
+					<p class="h5"><span class="dot"><i class="fas fa-pencil-alt"></i></span>{{ getDiveMainComment(3380) }}</p>
 					<div class="explain-box">
 						<p class="h5">{{ getDiveMainComment(3381) }}</p>
 						<p class="h5">{{ getDiveMainComment(3382) }}</p>
@@ -7065,8 +7066,8 @@
 						<pre><code>{{ getDiveMainComment(3394) }}</code></pre>
 					</div>
 					<br><br>
-					<p class="h4 padding-top" :id="diveSubs[10]"><span class="dot">●</span><b>{{ getDiveMainComment(3400) }}</b></p>
-					<p class="h5"><span class="dot">■</span>{{ getDiveMainComment(3401) }}</p>
+					<p class="h4 padding-top" :id="diveSubs[10]"><span class="dot"><i class="fas fa-book-open"></i></span><b>{{ getDiveMainComment(3400) }}</b></p>
+					<p class="h5"><span class="dot"><i class="fas fa-pencil-alt"></i></span>{{ getDiveMainComment(3401) }}</p>
 					<div class="explain-box">
 						<p class="h5">{{ getDiveMainComment(3402) }}</p>
 						<p class="h5">{{ getDiveMainComment(3403) }}</p>
