@@ -601,7 +601,7 @@
 					
 					"1400" : "제작 목적",
 					"1401" : "Vanillanote는 1인 개발입니다. javascript학습용으로 개발하였습니다. 따라서 사용 시 100%신뢰를 보장할 수 없으며, 제한되는 기능이 다소 있습니다."
-							+ " 하지만 왠만큼의 퍼포먼스는 보일 것이라 생각합니다."
+							+ " 하지만 훌륭한 퍼포먼스는 보일 것이라 생각합니다."
 							+ " Vanillanote는 개인 프로젝트를 진행 할 때 마다 editor를 새로 개발하는 소요를 줄이고자 개발을 시작했습니다."
 							+ " Jquery, Vue, React등 어떤 환경에서도 라이브러리 또는 프레임워크 없이 사용할 수 있는 editor개발을 목적으로 하였습니다."
 							+ " 때문에 본 프로그램은 Vanilla JS와 ES5문법만을 사용하였습니다."
@@ -609,17 +609,17 @@
 					"1410" : "장점",
 					"1411" : ["Vanilla JS와 ES5문법만을 사용하여 적용할 수 있는 환경이 넓다.",
 							"데스크탑과 모바일 환경 시 동작을 분리함.",
-							"하나의 document에 여러 note를 그릴 수 있음.",
+							"하나의 document에 여러 editor를 그릴 수 있음.",
 							"한글 사용 가능.",
 							"css나 javascript 기존 source에 최대한 영향을 받거나 주지 않도록 구현함.",
 							"innerHTML과 eval을 사용하지 않음.",
 							"html 태그 속성값으로 여러 제어가 가능함.",
-							"제공되는 function api를 사용하여 note 제어가 가능함.",
+							"제공되는 function api를 사용하여 editor 제어가 가능함.",
 							"getNote()를 통해 선언된 Vanillanote객체를 활용할 수 있음."],
 					"1420" : "단점",
 					"1421" : ["모바일 모드에서는 드레그 후 스타일 적용만 지원합니다.(최대한 노력해봤으나 모바일에서 한글입력 시 오류를 잡을 수 없었습니다...)",
-							"링크를 통한 동영상 삽입은 유튜브 embed id 삽입만 가능합니다.",
-							"기존 ctrl + z, y(실행취소/다시실행) 기능 사용이 제한됩니다.(커스텀 됨)",
+							"링크를 통한 동영상 삽입은 유튜브 embed id 삽입만 가능합니다(link자체를 첨부하기 위해서는 google에서 제공하는 api key가 필요함).",
+							"기존 ctrl + z, y(실행취소/다시실행) 기능 사용이 제한됩니다.(Vanillanote를 생성한 화면은 editor로만 해당 기능이 사용됨)",
 							"표 그리기 기능은 지원하지 않습니다."],
 							
 					"1450" : "브라우저 호환성",
@@ -705,7 +705,7 @@
 					"1363" : "6. Doing so allows you to redraw the editor whenever the corresponding Vue component is destroyed or mounted.",
 					
 					"1400": "Purpose of production",
-					"1401": "Vanillanote is developed by one person. It was developed for javascript learning purposes. Therefore, it cannot guarantee 100% reliability when used, and there are some limited features. However, I think it will show a certain level of performance. Vanillanote was started to reduce the need to develop a new editor every time I proceed with a personal project. It aimed to develop an editor that can be used without a library or framework in any environment, including Jquery, Vue, React, etc. Therefore, only Vanilla JS and ES5 syntax were used. The advantages and disadvantages of Vanillanote are as follows.",
+					"1401": "Vanillanote is developed by one person. It was developed for javascript learning purposes. Therefore, it cannot guarantee 100% reliability when used, and there are some limited features. However, I think it will show a certain excellent level of performance. Vanillanote was started to reduce the need to develop a new editor every time I proceed with a personal project. It aimed to develop an editor that can be used without a library or framework in any environment, including Jquery, Vue, React, etc. Therefore, only Vanilla JS and ES5 syntax were used. The advantages and disadvantages of Vanillanote are as follows.",
 					"1410": "Advantages",
 					"1411": ["It uses only Vanilla JS and ES5 syntax, so it can be applied in a wide range of environments.",
 							"It separates actions in desktop and mobile environments.",
@@ -719,8 +719,8 @@
 							],
 					"1420": "Disadvantages",
 					"1421": ["Only style application after dragging is supported in mobile mode.",
-							"Only YouTube embed id insertion is possible for video insertion via links.",
-							"The default functionality of Ctrl + Z (Undo) and Ctrl + Y (Redo) is disabled. (will be customized)",
+							"Video embedding through links is only possible by inserting a YouTube embed ID (an API key provided by Google is required to attach the link itself).",
+							"The use of the standard Ctrl + Z and Ctrl + Y (Undo/Redo) features is limited. These functions are only available within the editor screen of Vanillanote.",
 							"The table drawing feature is not supported."
 							],
 							
@@ -2252,17 +2252,17 @@
 `function vanillanote_onAfterCreate(e, vn) {
 	// change FontAwesome icon
 	function getFontAwesome(oldEl, iconType, iconId, cssText) {
-	let newEl = document.createElement('i');
-	for (let i = 0; i < oldEl.attributes.length; i++) {
-	  const attr = oldEl.attributes[i];
-	  newEl.setAttribute(attr.name, attr.value);
-	}
-	newEl.classList.remove('material-symbols-rounded');
-	newEl.classList.add(iconType);
-	newEl.classList.add(iconId);
-	if(cssText) {
-		newEl.setAttribute('style', cssText)
-	}
+		let newEl = document.createElement('i');
+		for (let i = 0; i < oldEl.attributes.length; i++) {
+			const attr = oldEl.attributes[i];
+			newEl.setAttribute(attr.name, attr.value);
+		}
+		newEl.classList.remove('material-symbols-rounded');
+		newEl.classList.add(iconType);
+		newEl.classList.add(iconId);
+		if(cssText) {
+			newEl.setAttribute('style', cssText)
+		}
 		return newEl;
 	};
       		
@@ -3821,19 +3821,19 @@
 					"2103" : 
 `function vanillanote_onAfterCreate(e, vn) {
 	// change FontAwesome icon
-	function getFontAwesome(oldEl, iconId, cssText) {
-	let newEl = document.createElement('i');
-	for (let i = 0; i < oldEl.attributes.length; i++) {
-	  const attr = oldEl.attributes[i];
-	  newEl.setAttribute(attr.name, attr.value);
-	}
-	newEl.classList.remove('material-symbols-rounded');
-	newEl.classList.add('fas');
-	newEl.classList.add(iconId);
-	if(cssText) {
-		newEl.setAttribute('style', cssText)
-	}
-	return newEl;
+	function getFontAwesome(oldEl, iconType, iconId, cssText) {
+		let newEl = document.createElement('i');
+		for (let i = 0; i < oldEl.attributes.length; i++) {
+			const attr = oldEl.attributes[i];
+			newEl.setAttribute(attr.name, attr.value);
+		}
+		newEl.classList.remove('material-symbols-rounded');
+		newEl.classList.add(iconType);
+		newEl.classList.add(iconId);
+		if(cssText) {
+			newEl.setAttribute('style', cssText)
+		}
+		return newEl;
 	};
 	vn.elements.paragraphStyleSelects[0].replaceChild(
 		getFontAwesome(vn.elements.paragraphStyleSelects[0].firstChild, 'fa-rocket'),
@@ -5030,9 +5030,9 @@
 						<table class="table">
 							<tbody>
 								<tr>
-									<td class="col-xs-2 text-center">Device</th>
+									<td class="col-xs-3 text-center">Device</th>
 									<td class="col-xs-5">Browser</th>
-									<td class="col-xs-5">Compatibility</td>
+									<td class="col-xs-4">Compatibility</td>
 								</tr>
 								<tr>
 									<td class="text-center" rowspan="5"><i class="fas fa-desktop"></i></th>
@@ -6350,7 +6350,7 @@
 									<th class="col-xs-7 h6">Description</th>
 								</tr>
 								<tr>
-									<td class="h6">{{ getCommonComment(2021) }}</td>
+									<td class="h6">{{ getCommonComment(2001) }}</td>
 									<td class="h6">{{ getStartedMainComment(2124) }}</td>
 									<td class="h6">{{ getStartedMainComment(2125) }}</td>
 								</tr>
@@ -6685,7 +6685,6 @@
 						<p class="h5">{{ getDiveMainComment(2304) }}</p>
 						<p class="h5">{{ getCommonComment(1003) }}</p>
 						<pre><code>{{ getDiveMainComment(2305) }}</code></pre>
-						<br>
 						<p class="h5">{{ getDiveMainComment(2306) }}</p>
 						<p class="h5">{{ getDiveMainComment(2307) }}</p>
 						<table class="table">
@@ -6937,7 +6936,7 @@
 								</tr>
 								<tr>
 									<td class="h6">{{ getDiveMainComment(3288) }}</td>
-									<td class="h6" rowspan="2">{{ getCommonComment(2002) }}</td>
+									<td class="h6" rowspan="2">{{ getCommonComment(2003) }}</td>
 									<td class="h6" rowspan="2">{{ getDiveMainComment(3289) }}</td>
 									<td class="h6">{{ getDiveMainComment(3290) }}</td>
 								</tr>
@@ -7311,7 +7310,7 @@
 	            		note02Attrs : {
 	            			'note-mode-by-device' : 'MOBILE',
 	            			'textarea-height' : '350px',
-	            			'size-level-mobile' : '4',
+	            			'size-level-mobile' : '3',
 	            			'placeholder-is-visible' : 'true',
 	            			'placeholder-title' : '',
 	            			'placeholder-text-content' : 'Notes are displayed like this in the mobile environment without special settings.',
