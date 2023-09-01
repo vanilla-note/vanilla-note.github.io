@@ -627,27 +627,27 @@
 							
 					"1450" : "브라우저 호환성",
 					"1451" : " Chrome",
-					"1452" : "24+",
+					"1452" : "61",
 					"1453" : " Edge",
-					"1454" : "12+",
+					"1454" : "16",
 					"1455" : " Safari",
-					"1456" : "8+",
+					"1456" : "14",
 					"1457" : " Firefox",
-					"1458" : "15+",
+					"1458" : "36",
 					"1459" : " Opera",
-					"1460" : "15+",
+					"1460" : "48",
 					"1461" : " Chrome Android",
-					"1462" : "25+",
+					"1462" : "61",
 					"1463" : " Safari on IOS",
-					"1464" : "8+",
+					"1464" : "14",
 					"1465" : " Firefox for Android",
-					"1466" : "15+",
+					"1466" : "Mobile automatic height adjustment not available",
 					"1467" : " Opera Android",
-					"1468" : "14+",
-					"1469" : " Samsug Internet",
-					"1470" : "1.0+",
+					"1468" : "48",
+					"1469" : " Samsung Internet",
+					"1470" : "8.0",
 					"1471" : " WebView Android",
-					"1472" : "4.4+",
+					"1472" : "61",
 							
 					"1500" : "라이센스",
 					"1501" : "MIT License",
@@ -732,27 +732,27 @@
 							
 					"1450" : "Browser compatibility",
 					"1451" : " Chrome",
-					"1452" : "24+",
+					"1452" : "61",
 					"1453" : " Edge",
-					"1454" : "12+",
+					"1454" : "16",
 					"1455" : " Safari",
-					"1456" : "8+",
+					"1456" : "14",
 					"1457" : " Firefox",
-					"1458" : "15+",
+					"1458" : "36",
 					"1459" : " Opera",
-					"1460" : "15+",
+					"1460" : "48",
 					"1461" : " Chrome Android",
-					"1462" : "25+",
+					"1462" : "61",
 					"1463" : " Safari on IOS",
-					"1464" : "8+",
+					"1464" : "14",
 					"1465" : " Firefox for Android",
-					"1466" : "15+",
+					"1466" : "Mobile automatic height adjustment not available",
 					"1467" : " Opera Android",
-					"1468" : "14+",
-					"1469" : " Samsug Internet",
-					"1470" : "1.0+",
+					"1468" : "48",
+					"1469" : " Samsung Internet",
+					"1470" : "8.0",
 					"1471" : " WebView Android",
-					"1472" : "4.4+",
+					"1472" : "61",
 					
 					"1500": "License",
 					"1501": "MIT License",
@@ -5036,9 +5036,9 @@
 						<table class="table">
 							<tbody>
 								<tr>
-									<td class="col-xs-3 text-center">Device</th>
-									<td class="col-xs-5">Browser</th>
-									<td class="col-xs-4">Compatibility</td>
+									<td class="col-xs-2 text-center">Device</th>
+									<td class="col-xs-4">Browser</th>
+									<td class="col-xs-6">Compatibility</td>
 								</tr>
 								<tr>
 									<td class="text-center" rowspan="5"><i class="fas fa-desktop"></i></th>
@@ -5072,7 +5072,7 @@
 								</tr>
 								<tr>
 									<td><i class="fab fa-firefox"></i>{{ getIntroMainComment(1465) }}</th>
-									<td class="text-success">{{ getIntroMainComment(1466) }}</td>
+									<td class="text-danger">{{ getIntroMainComment(1466) }}</td>
 								</tr>
 								<tr>
 									<td><i class="fab fa-opera"></i>{{ getIntroMainComment(1467) }}</th>
@@ -7279,7 +7279,7 @@
 	        		this.vanillanote = getVanillanote();
 	        		let vn = this.vanillanote;
 	        		vn.variables.sizeRates[2] = 0.5;
-			    	vn.variables.loadInterval = 300;
+	        		vn.variables.loadInterval = 300;
 	        		vanillanote_onCreate(vn);
 	        		
 	        		vn.variables.useMobileActiveMode[1] = true;
