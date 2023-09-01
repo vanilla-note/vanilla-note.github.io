@@ -3049,21 +3049,7 @@
 	vn.variables.logMode = 'INFO';
 };
 `,
-					"3150" : ".activeModeByDevice",
-					"3151" : "1. 현재 사용자 device를 desktop or mobile 중 어느것으로 인식할 지를 제어하는 값이다.",
-					"3152" : "2. vanillanote_onBeforeCreate에 정의하면 속성의 note-mode-by-device 대신 동적으로 사용할 수 있습니다.",
-					"3153" : "ADAPTIVE",
-					"3154" : "Defualt값. 사용자 device를 각 경우에 따라 판별한다.",
-					"3155" : "DESKTOP",
-					"3156" : "무조건 desktop으로 인식한다.",
-					"3157" : "MOBILE",
-					"3158" : "무조건 mobile으로 인식한다.",
-					"3159" : 
-`function vanillanote_onBeforeCreate(e, vn) {
-	vn.variables.activeModeByDevice = 'MOBILE';
-};
-`,
-					"3170" : ".useAutoScroll",
+					"3170" : ".useMobileActiveMode[idx]",
 					"3171" : "1. editor의 textarea scroll이동, 높이 조절 동작을 제어하는 값이다.",
 					"3172" : "2. .activeModeByDevice보다 scroll이동, 높이 조절 동작에 대해서는 우선이다.",
 					"3173" : "true",
@@ -3072,20 +3058,7 @@
 					"3176" : "note를 focus, blur할 때 scroll이 변하지 않는다..",
 					"3177" : 
 `function vanillanote_onBeforeCreate(e, vn) {
-	vn.variables.useAutoScroll = 'MOBILE';
-};
-`,
-					"3190" : ".mobileKeyboardHeight",
-					"3191" : "1. 모바일이용 시 기존 textarea높이 - 자판이 올라오는 높이를 대략 추정해서 넣은 값.",
-					"3192" : "2. IOS는 모바일 자판의 크기를 가져올 수 없어서 만든 값 입니다.",
-					"3193" : "3. 혹여 Android, IOS등 모바일 사용 시 올라오는 자판의 크기를 가져올 수 있는 개발자분은"
-							+" 해당 값에 기존 textarea높이 - 자판 크기를 대입해서 사용하시면 됩니다.",
-					"3194" : "4. textarea focus시 .mobileKeyboardHeight에 저장된 값만큼 textarea 높이가 설정됩니다.",
-					"3195" : "height pixel",
-					"3196" : "Default값은 사용자 화면의 높이(innerHeight) * 0.4(최대 500). pixel값을 입력한다.",
-					"3197" : 
-`function vanillanote_onAfterCreate(e, vn) {
-	vn.variables.mobileKeyboardHeight = 200;
+	vn.variables.useMobileActiveMode = 'MOBILE';
 };
 `,
 					"3210" : ".sizeRates[idx]",
@@ -4645,21 +4618,7 @@
 	vn.variables.logMode = 'INFO';
 };
 `,
-					"3150" : ".activeModeByDevice",
-					"3151" : "1. A value controlling how to recognize the current user's device as either desktop or mobile.",
-					"3152" : "2. If defined in vanillanote_onBeforeCreate, it can be dynamically used instead of the note-mode-by-device attribute.",
-					"3153" : "ADAPTIVE",
-					"3154" : "Default value. Determines the user's device depending on the situation.",
-					"3155" : "DESKTOP",
-					"3156" : "Always recognizes as desktop.",
-					"3157" : "MOBILE",
-					"3158" : "Always recognizes as mobile.",
-					"3159" : 
-`function vanillanote_onBeforeCreate(e, vn) {
-	vn.variables.activeModeByDevice = 'MOBILE';
-};
-`,
-					"3170" : ".useAutoScroll",
+					"3170" : ".useMobileActiveMode[idx]",
 					"3171" : "1. A value controlling the textarea scroll movement and height adjustment in the editor.",
 					"3172" : "2. This takes precedence over .activeModeByDevice for controlling scroll movement and height adjustment.",
 					"3173" : "true",
@@ -4668,19 +4627,7 @@
 					"3176" : "Scroll does not change when the note is focused or blurred.",
 					"3177" : 
 `function vanillanote_onBeforeCreate(e, vn) {
-	vn.variables.useAutoScroll = 'MOBILE';
-};
-`,
-					"3190" : ".mobileKeyboardHeight",
-					"3191" : "1. An estimated value for the height of the on-screen keyboard during mobile usage.",
-					"3192" : "2. This value was made because iOS cannot fetch the height of the mobile keyboard.",
-					"3193" : "3. If there are developers who can fetch the height of the on-screen keyboard for Android, iOS, etc., they can insert the keyboard height to this value.",
-					"3194" : "4. When the textarea is focused, the height of the textarea decreases by the value stored in .mobileKeyboardHeight.",
-					"3195" : "height in pixels",
-					"3196" : "The default value is user screen height (innerHeight) * 0.4 (up to 500). Enter the value in pixels.",
-					"3197" : 
-`function vanillanote_onAfterCreate(e, vn) {
-	vn.variables.mobileKeyboardHeight = 200;
+	vn.variables.useMobileActiveMode = 'MOBILE';
 };
 `,
 					"3210" : ".sizeRates[idx]",
@@ -6816,37 +6763,7 @@
 						<pre><code>{{ getDiveMainComment(3139) }}</code></pre>
 					</div>
 					<br>
-					<p class="h5" id="etc_anchor_01"><span class="dot">■</span>{{ getDiveMainComment(3150) }}</p>
-					<div class="explain-box">
-						<p class="h5">{{ getDiveMainComment(3151) }}</p>
-						<p class="h5">{{ getDiveMainComment(3152) }}</p>
-						<table class="table">
-							<tbody>
-								<tr>
-									<th class="col-xs-2 h6">Type</th>
-									<th class="col-xs-2 h6">Value</th>
-									<th class="col-xs-8 h6">Description</th>
-								</tr>
-								<tr>
-									<td class="h6" rowspan="3">{{ getCommonComment(2000) }}</td>
-									<td class="h6">{{ getDiveMainComment(3153) }}</td>
-									<td class="h6">{{ getDiveMainComment(3154) }}</td>
-								</tr>
-								<tr>
-									<td class="h6">{{ getDiveMainComment(3155) }}</td>
-									<td class="h6">{{ getDiveMainComment(3156) }}</td>
-								</tr>
-								<tr>
-									<td class="h6">{{ getDiveMainComment(3157) }}</td>
-									<td class="h6">{{ getDiveMainComment(3158) }}</td>
-								</tr>
-							</tbody>
-						</table>
-						<p class="h5">{{ getCommonComment(1002) }}</p>
-						<pre><code>{{ getDiveMainComment(3159) }}</code></pre>
-					</div>
-					<br>
-					<p class="h5"><span class="dot">■</span>{{ getDiveMainComment(3170) }}</p>
+					<p class="h5" id="etc_anchor_01"><span class="dot">■</span>{{ getDiveMainComment(3170) }}</p>
 					<div class="explain-box">
 						<p class="h5">{{ getDiveMainComment(3171) }}</p>
 						<p class="h5">{{ getDiveMainComment(3172) }}</p>
@@ -6870,30 +6787,6 @@
 						</table>
 						<p class="h5">{{ getCommonComment(1002) }}</p>
 						<pre><code>{{ getDiveMainComment(3177) }}</code></pre>
-					</div>
-					<br>
-					<p class="h5"><span class="dot">■</span>{{ getDiveMainComment(3190) }}</p>
-					<div class="explain-box">
-						<p class="h5">{{ getDiveMainComment(3191) }}</p>
-						<p class="h5">{{ getDiveMainComment(3192) }}</p>
-						<p class="h5">{{ getDiveMainComment(3193) }}</p>
-						<p class="h5">{{ getDiveMainComment(3194) }}</p>
-						<table class="table">
-							<tbody>
-								<tr>
-									<th class="col-xs-2 h6">Type</th>
-									<th class="col-xs-2 h6">Value</th>
-									<th class="col-xs-8 h6">Description</th>
-								</tr>
-								<tr>
-									<td class="h6">{{ getCommonComment(2008) }}</td>
-									<td class="h6">{{ getDiveMainComment(3195) }}</td>
-									<td class="h6">{{ getDiveMainComment(3196) }}</td>
-								</tr>
-							</tbody>
-						</table>
-						<p class="h5">{{ getCommonComment(1002) }}</p>
-						<pre><code>{{ getDiveMainComment(3197) }}</code></pre>
 					</div>
 					<br>
 					<p class="h5" id="etc_anchor_02"><span class="dot">■</span>{{ getDiveMainComment(3210) }}</p>
@@ -7162,7 +7055,7 @@
 	        this.currentLang = lang ? lang : 'ENG';
 	        if(!viewId || ['intro','started','dive'].indexOf(viewId) < 0) viewId = 'intro';
 	        this.currentView = viewId;
-	        this.scrollAnchor(anchorId, viewId === 'started' ? 500 : 200);
+	        this.scrollAnchor(anchorId, 1000);
 		},
 		beforeDestroy: function() {
 			window.removeEventListener('resize', this.handleResize);
@@ -7259,7 +7152,7 @@
 						behavior: 'smooth',
 						block: 'start',
 					});
-        		}, interval ? interval : 200);
+        		}, interval ? interval : 500);
         	},
 	    },
 	    components: {
@@ -7332,12 +7225,11 @@
 	        		this.vanillanote = getVanillanote();
 	        		let vn = this.vanillanote;
 	        		vanillanote_onCreate(vn);
-	        		console.log(vn.variables.useAutoScroll[1]);
 	        		
-	        		vn.variables.useAutoScroll[1] = true;
-	        		vn.variables.useAutoScroll[2] = false;
-	        		vn.variables.useAutoScroll[3] = false;
-	        		vn.variables.useAutoScroll[4] = false;
+	        		vn.variables.useMobileActiveMode[1] = true;
+	        		vn.variables.useMobileActiveMode[2] = false;
+	        		vn.variables.useMobileActiveMode[3] = false;
+	        		vn.variables.useMobileActiveMode[4] = false;
 	        		vn.elementEvents.textarea_onAfterFocus = function(e) {
 	        			 if(vn.elements.textareas[1] === e.target) {
 	        				setTimeout(function() {
