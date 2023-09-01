@@ -137,6 +137,48 @@
 		width: 70%;
 		padding-left: 30px;
 	}
+	/* 모니터 본체 */
+	.desktop-screen {
+		display: inline-block;
+		width: 300px;
+		height: 200px;
+		background-color: #ccc;
+		border-radius: 12px;
+		box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+		position: relative;
+	}
+	/* 모니터 스크린 (실제 내용이 들어갈 부분) */
+	.desktop-screen .screen {
+		width: 296px;
+		height: 196px;
+		background-color: #fff;
+		position: absolute;
+		top: 2px;
+		left: 2px;
+		border-radius: 8px;
+		overflow: hidden;
+	}
+	/* 모니터 스탠드 */
+	.desktop-screen .stand {
+		width: 80px;
+		height: 10px;
+		background-color: #ccc;
+		position: absolute;
+		bottom: -20px;
+		left: 50%;
+		transform: translateX(-50%);
+		border-radius: 12px;
+	}
+	.desktop-screen .base {
+		width: 120px;
+		height: 10px;
+		background-color: #ccc;
+		position: absolute;
+		bottom: -40px;
+		left: 50%;
+		transform: translateX(-50%);
+		border-radius: 6px;
+	}
 	.mobile-screen {
 		display: inline-block;
 		width: 275px;
@@ -507,7 +549,6 @@
 					"1000" : "Get min.js (go github)",
 					
 					"1100" : "Vanilla JS와 ES5문법만을 활용한 simple editor.",
-					"1101" : "※ 데스크탑 화면과 모바일 화면이 다르게 적용됩니다. 현재 페이지를 데스크탑으로 접속해보세요.",
 					
 					"1200" : "데스크탑 화면과 모바일 화면이 다르게 적용됩니다.",
 					"1201" : "데스크탑, 모바일 화면을 따로 설정할 필요 없습니다. 데스크탑에서는 첫번째 노트로, 모바일에서는 두번째 노트로 화면상에 나타납니다.",
@@ -613,7 +654,6 @@
 					"1000": "Get min.js (go github)",
 					
 					"1100": "A simple editor using only Vanilla JS and ES5 syntax.",
-					"1101": "※ The desktop screen and mobile screen are applied differently. Please access this page on your desktop.",
 					
 					"1200": "The desktop screen and mobile screen are applied differently.",
 					"1201": "You don't need to set up the desktop and mobile screens separately. On the desktop, it appears on the first note, and on mobile, it appears on the second note.",
@@ -4900,15 +4940,22 @@
 						<p class="h6">{{ getCommonComment(1000) }}</p>
 						<pre><code>{{ getVanillanoteCode(note01Attrs) }}</code></pre>
 					</div>
-					<p class="h6" v-show="isMobile">{{ getIntroMainComment(1101) }}</p>
 					<br><br>
-					<div v-show="!isMobile">
+					<div>
 						<p class="h4 padding-top"><span class="dot">●</span><b>{{ getIntroMainComment(1200) }}</b></p>
 						<br>
 						<div class="note-box text-center">
-							<div class="mobile-screen text-left">
+							<div class="mobile-screen text-left" v-show="!isMobile">
 								<div data-vanillanote v-bind="note02Attrs"></div>
 								<div class="mobile-keyboard">This is a Keyboard</div>
+							</div>
+							<div class="desktop-screen" v-show="isMobile">
+							  <div class="screen">
+							  	<div data-vanillanote v-bind="note03Attrs"></div>
+							  </div>
+							  <div class="stand"></div>
+							  <div class="base"></div>
+							  <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 							</div>
 						</div>
 						<br>
@@ -4927,15 +4974,15 @@
 							<tbody>
 								<tr>
 									<th class="col-xs-3 text-left h6">{{ getIntroMainComment(1302) }}</th>
-									<td style="padding: 0;"><div data-vanillanote v-bind="note03Attrs"></div></td>
+									<td style="padding: 0;"><div data-vanillanote v-bind="note04Attrs"></div></td>
 								</tr>
 								<tr>
 									<th class="h6">{{ getIntroMainComment(1303) }}</th>
-									<td style="padding: 0;"><div data-vanillanote v-bind="note03Attrs"></div></td>
+									<td style="padding: 0;"><div data-vanillanote v-bind="note04Attrs"></div></td>
 								</tr>
 								<tr>
 									<th class="h6">{{ getIntroMainComment(1304) }}</th>
-									<td style="padding: 0;"><div data-vanillanote v-bind="note03Attrs"></div></td>
+									<td style="padding: 0;"><div data-vanillanote v-bind="note04Attrs"></div></td>
 								</tr>
 							</tbody>
 						</table>
@@ -7224,12 +7271,14 @@
 					
 	        		this.vanillanote = getVanillanote();
 	        		let vn = this.vanillanote;
+	        		vn.variables.sizeRates[2] = 0.5;
 	        		vanillanote_onCreate(vn);
 	        		
 	        		vn.variables.useMobileActiveMode[1] = true;
 	        		vn.variables.useMobileActiveMode[2] = false;
 	        		vn.variables.useMobileActiveMode[3] = false;
 	        		vn.variables.useMobileActiveMode[4] = false;
+	        		vn.variables.useMobileActiveMode[5] = false;
 	        		vn.elementEvents.textarea_onAfterFocus = function(e) {
 	        			 if(vn.elements.textareas[1] === e.target) {
 	        				setTimeout(function() {
@@ -7266,7 +7315,19 @@
 	            			'placeholder-text-content' : 'Notes are displayed like this in the mobile environment without special settings.',
 	            		},
 	            		note03Attrs : {
-	            			'textarea-height' : '350px',
+	            			'textarea-height' : '280px',
+	            			'note-mode-by-device' : 'DESKTOP',
+	            			'size-level-desktop' : '1',
+	            			'size-level-mobile' : '1',
+	            			'default-font-size' : '6px',
+	            			'default-line-height' : '6px',
+	            			'using-paragraph-all-style' : 'false',
+	            			'using-character-size' : 'false',
+	            			'using-attach-file' : 'false',
+	            			'using-do' : 'false',
+	            			'using-help' : 'false',
+	            		},
+	            		note04Attrs : {
 	            			'size-level-desktop' : '1',
 	            			'size-level-mobile' : '1',
 	            			'using-character-size' : 'false',
