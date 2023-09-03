@@ -516,7 +516,7 @@
 	const comments = {
 		common : {
 				kor: {
-					"1000" : "▼ 해당 코드는 아래와 같습니다.",
+					"1000" : "▼ 해당 속성은 아래와 같습니다.",
 					"1001" : "<div data-vanillanote></div>",
 					"1002" : "▼ 예시 코드는 아래와 같습니다.",
 					"1003" : "▼ 최 상단의 costomized된 editor는 해당 코드를 추가했습니다.",
@@ -534,7 +534,7 @@
 					"3001" : "해당 버튼을 클릭 후 콘솔창(F12)을 확인해 보세요.",
 				},
 			    eng: {
-					"1000" : "The code is as follows.",
+					"1000" : "The attributes are as follows.",
 					"1001" : "<div data-vanillanote></div>",
 					"1002" : "The example code is as follows.",
 					"1003" : "▼ Top customized editor has added this code",
@@ -1684,7 +1684,7 @@
 			main : {
 				kor : {
 					"1000" : "Deep Dive를 활용한 커스텀 예시",
-					"1001" : "위 속성에 추가적으로 Vanillanote에서 제공하는  Object를 활용하면, 더욱 다양하게 editor를 커스텀을 할 수 있습니다. 이제 본격적으로 Vanillanote에 대해 알아 보겠습니다.",
+					"1001" : "위 Editor는 Vanillanote에서 제공하는 Object를 활용하여 더욱 다양하게 커스텀을 하였습니다. 이제 본격적으로 Vanillanote에 대해 알아 보겠습니다.",
 					
 					"1100" : "생성과 소멸",
 					"1101" : "Object를 수정 할 위치.",
@@ -1800,6 +1800,7 @@
 };
 `,
 					"1224" : "객체 보기",
+					"1225" : "이제 가져온 객체를 어떻게 활용할 수 있는지 알아보겠습니다.",
 					
 					"1300" : "객체 - consts",
 					"1301" : "1. editor 로직에 필수 상수들.",
@@ -3246,7 +3247,7 @@
 				},
 				eng: {
 					"1000": "Custom Example Using Deep Dive",
-					"1001": "By utilizing the Object provided by Vanillanote in addition to the above attributes, you can customize the editor in various ways. Now let's get to know more about Vanillanote.",
+					"1001": "The above editor was further customized using the Object provided by Vanillanote. Now let's get to know more about Vanillanote.",
 					
 					"1100" : "Create & Destroy",
 					"1101": "Location to modify the Object.",
@@ -3370,6 +3371,7 @@
 };
 `,
 					"1224" : "See Object",
+					"1225" : "Now let's see how we can utilize the geted objects!",
 					
 					"1300" : "Object - consts",
 					"1301": "1. Essential constants for editor logic.",
@@ -6434,7 +6436,7 @@
 						<pre><code>{{ getVanillanoteCode(noteCustom) }}</code></pre>
 					</div>
 					<div class="explain-box">
-						<p class="h5">{{ getDiveMainComment(1001) }}</p>
+						<p class="h5 text-info">{{ getDiveMainComment(1001) }}</p>
 					</div>
 					<br><br>
 					<p class="h4 padding-top" :id="diveSubs[0]"><span class="dot"><i class="fas fa-book-open"></i></span><b>{{ getDiveMainComment(1100) }}</b></p>
@@ -6526,6 +6528,7 @@
 								<span class="glyphicon glyphicon-eye-open padding-left" aria-hidden="true"></span>
 							</button>
 						</p>
+						<p class="h5"><b>{{ getDiveMainComment(1225) }}</b></p>
 					</div>
 					<br><br>
 					<p class="h4 padding-top" :id="diveSubs[2]"><span class="dot"><i class="fas fa-book-open"></i></span><b>{{ getDiveMainComment(1300) }}</b></p>
