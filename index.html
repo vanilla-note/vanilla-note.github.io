@@ -847,7 +847,7 @@
 					"1162" : "2. css height 값을 문자열로 삽입한다. ex) '400px'",
 					"1163" : attributes.textareaHeight.key,
 					"1164" : attributes.textareaMaxHeight.key,
-					"1166" : "css height",
+					"1166" : "css height(only px)",
 					"1167" : "textarea의 height를 정한다. Default값은 데스크탑 : 500px/ 모바일 : 350px. height는 px단위로만 입력해야한다.(ex. 350px)",
 					"1168" : "textarea의 max-height를 정한다. Default값은 900px. height는 px단위로만 입력해야한다.(ex. 900px)",
 					"1169" : attributes.textareaHeight.key + '="350px"\n' + attributes.textareaMaxHeight.key + '="600px"',
@@ -1272,7 +1272,7 @@
                     "1142": "2. Insert CSS width value as a string. ex) '100%', '600px'",
                     "1143": attributes.textareaWidth.key,
                     "1144": attributes.textareaMaxWidth.key,
-                    "1146": "CSS Width",
+                    "1146": "css width",
                     "1147": "Defines the width of the note. Default value is 100%.",
                     "1148": "Defines the max-width of the note. Default value is 100%.",
                     "1149": attributes.textareaWidth.key + '="80%"\n' + attributes.textareaMaxWidth.key + '="1200px"',
@@ -1281,7 +1281,7 @@
                     "1162": "2. Insert CSS height value as a string. ex) '400px'",
                     "1163": attributes.textareaHeight.key,
                     "1164": attributes.textareaMaxHeight.key,
-                    "1166": "CSS Height",
+                    "1166": "css height(only px)",
                     "1167": "Defines the textarea's height. Default value is Desktop: 500px/ Mobile: 350px. Height must be entered only in px units.(ex 350px)",
                     "1168": "Defines the textarea's max-height. Default value is 900px. Height must be entered only in px units.(ex 900px)",
                     "1169": attributes.textareaHeight.key + '="350px"\n' + attributes.textareaMaxHeight.key + '="600px"',
@@ -3151,6 +3151,20 @@
 	vn.variables.loadInterval = 200;
 };
 `,
+					"3265" : ".textareaOriginWidths[idx], .textareaOriginHeights[idx]",
+					"3266" : "1. textarea의 크기를 동적으로 설정하기 위한 변수",
+					"3267" : ".textareaOriginWidths[idx]",
+					"3268" : "css width",
+					"3269" : "textarea의 기본 width. 설정하지 않으면 textarea-width값이 삽입된다. 동적으로 width를 변경하기 위해 사용.",
+					"3270" : ".textareaOriginHeights[idx]",
+					"3271" : "css height(only px)",
+					"3272" : "textarea의 기본 height. 설정하지 않으면 textarea-height값이 삽입된다. 동적으로 height를 변경하기 위해 사용. px단위 css스타일만 넣는다.(ex. 400px)",
+					"3273" : 
+`function vanillanote_onBeforeCreate(e, vn) {
+	const windowHeight = window.innerHeight;
+	vn.variables.textareaOriginHeights[0] = (windowHeight * 0.75) + "px";
+};
+`,
 					"3280" : ".placeholderIsVisible[idx], .placeholderAddTop[idx], .placeholderAddLeft[idx], .placeholderWidth[idx]",
 					"3281" : "1. placeholder에 관한 값들. 속성의 placeholder- 를 사용할 수 있지만 해당 변수들을 사용하면 동적으로 placeholder의 제어가 가능하다.",
 					"3282" : "2. vanillanote_onAfterCreate()에 정의",
@@ -4719,6 +4733,20 @@
 					"3259" : 
 `function vanillanote_onBeforeCreate(e, vn) {
 	vn.variables.loadInterval = 200;
+};
+`,
+					"3265" : ".textareaOriginWidths[idx], .textareaOriginHeights[idx]",
+					"3266" : "1. Variables for dynamically setting the size of the textarea",
+					"3267" : ".textareaOriginWidths[idx]",
+					"3268" : "css width",
+					"3269" : "Default width of the textarea. If not set, the value of textarea-width is inserted. Used for dynamically changing the width.",
+					"3270" : ".textareaOriginHeights[idx]",
+					"3271" : "css height(only px)",
+					"3272" : "Default height of the textarea. If not set, the value of textarea-height is inserted. Used for dynamically changing the height. Only insert css style in px units.(ex. 400px)",
+					"3273" : 
+`function vanillanote_onBeforeCreate(e, vn) {
+	const windowHeight = window.innerHeight;
+	vn.variables.textareaOriginHeights[0] = (windowHeight * 0.75) + "px";
 };
 `,
 					"3280" : ".placeholderIsVisible[idx], .placeholderAddTop[idx], .placeholderAddLeft[idx], .placeholderWidth[idx]",
@@ -6928,6 +6956,34 @@
 						<pre><code>{{ getDiveMainComment(3259) }}</code></pre>
 					</div>
 					<br>
+					<p class="h5"><span class="dot"><i class="fas fa-pencil-alt"></i></span>{{ getDiveMainComment(3265) }}</p>
+					<div class="explain-box">
+						<p class="h5">{{ getDiveMainComment(3266) }}</p>
+						<table class="table">
+							<tbody>
+								<tr>
+									<th class="col-xs-2 h6">key</th>
+									<th class="col-xs-2 h6">Type</th>
+									<th class="col-xs-2 h6">Value</th>
+									<th class="col-xs-6 h6">Description</th>
+								</tr>
+								<tr>
+									<td class="h6">{{ getDiveMainComment(3267) }}</td>
+									<td class="h6" rowspan="2">{{ getCommonComment(2000) }}</td>
+									<td class="h6">{{ getDiveMainComment(3268) }}</td>
+									<td class="h6">{{ getDiveMainComment(3269) }}</td>
+								</tr>
+								<tr>
+									<td class="h6">{{ getDiveMainComment(3270) }}</td>
+									<td class="h6">{{ getDiveMainComment(3271) }}</td>
+									<td class="h6">{{ getDiveMainComment(3272) }}</td>
+								</tr>
+							</tbody>
+						</table>
+						<p class="h5">{{ getCommonComment(1003) }}</p>
+						<pre><code>{{ getDiveMainComment(3273) }}</code></pre>
+					</div>
+					<br>
 					<p class="h5" id="etc_anchor_03"><span class="dot"><i class="fas fa-pencil-alt"></i></span>{{ getDiveMainComment(3280) }}</p>
 					<div class="explain-box">
 						<p class="h5">{{ getDiveMainComment(3281) }}</p>
@@ -7939,7 +7995,7 @@
 	            		diveSubs : ['creat','object','consts','csses','colors','languageset','elements','elementevents','cssevents','variables','etc'],
 	            		noteCustom : {
 	            			'data-note-id' : 'custom',
-	            			'textarea-height' : '400px',
+	            			'textarea-max-height' : '400px',
 	            			'add-font-family' : 'Noto Sans JP',
 	            			'default-font-family' : 'Noto Sans JP',
 	            			'placeholder-is-visible' : true,
@@ -8076,6 +8132,9 @@
             				'font-size' : '16px',
 	            		  	'transition' : 'font-size 0.1s ease-in-out',
 	            		};
+	            		
+	            		const windowHeight = window.innerHeight;
+	            		vn.variables.textareaOriginHeights[0] = (windowHeight * 0.75) + "px";
 	            		
 	            		return true;
 	            	},
